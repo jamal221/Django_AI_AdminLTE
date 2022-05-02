@@ -3,6 +3,8 @@ Running machine learning projects on Django  and MySQL then represent them on Ad
 The main aim of this project is to implement a Data science project by python, and, visualizing was the most concern for us, therefore Django can help us to represent our result
 perfectly. MEanwhile, there huge amount of issue which solving one by one improve our knowledge gradually, In fact, I would like categorize the name of project which we would like
 to develop, additionally some feature which help us to progress during this way.
+
+
 Catograizing Projects:
 1)RFM
 2)Minset
