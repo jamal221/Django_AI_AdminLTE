@@ -2,5 +2,9 @@ ssss
 
 salam
 
+<<<<<<< HEAD
 sdsdfsdfs
 dfhgjksdfgjdhfj
+=======
+sdsdfsdfs
+>>>>>>> 504a4e21e6a5a4339f2ac1a5ab835846409d4d14
