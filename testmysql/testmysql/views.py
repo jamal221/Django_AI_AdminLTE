@@ -44,6 +44,30 @@ def check_gui(request):
         user_id_list=str(tuple(user_id_list))
         query1=UsersDetails.objects.raw('SELECT name, namefamily, email, mobile, bank, account FROM users where id in'+ user_id_list)
         return render(request, "showAIresult/checkresult.html",{"UsersDetails":query1})
+    elif (request.POST.get('check1')) and (request.POST.get('check3')):
+        var4_M=request.POST.get('check1')
+        Var4_R=request.POST.get('check3')
+        title1="مشتریانی که خرید بالا و اخیرا مارجعه نموده اند"
+        rfm_R=buys_ai()
+        result1=rfm_R[rfm_R['R']==int(Var4_R)]
+        result=rfm_R[rfm_R['M']==int(var4_M)]
+        result1=result1.reset_index(level=0)
+        user_id_list = result1.user.tolist()
+        user_id_list=str(tuple(user_id_list))
+        query1=UsersDetails.objects.raw('SELECT name, namefamily, email, mobile, bank, account FROM users where id in'+ user_id_list)
+        return render(request, "showAIresult/checkresult.html",{"UsersDetails":query1, "title_response":"title jamal"})
+    elif (request.POST.get('check1')) and (request.POST.get('check2')):
+        var5_M=request.POST.get('check1')
+        Var5_F=request.POST.get('check2')
+        title1="مشتریانی که حجم خرید بالا و زیاد مراجعه نموده اند"
+        rfm_R=buys_ai()
+        result1=rfm_R[rfm_R['F']==int(Var5_F)]
+        result=rfm_R[rfm_R['M']==int(var5_M)]
+        result1=result1.reset_index(level=0)
+        user_id_list = result1.user.tolist()
+        user_id_list=str(tuple(user_id_list))
+        query1=UsersDetails.objects.raw('SELECT name, namefamily, email, mobile, bank, account FROM users where id in'+ user_id_list)
+        return render(request, "showAIresult/checkresult.html",{"UsersDetails":query1, "title_response":"title jamal"})
     else:
         msg="please select one of the checkbox for assess your data"
         return render(request, "showAIresult/checkresult.html",{"var1":msg})
